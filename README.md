@@ -35,3 +35,65 @@ A content-based **Movie Recommendation System** built using Machine Learning, TF
 ---
 
 ## 📂 Project Structure
+
+```
+Movie-Recommendation-System/
+│
+├── app.py                  # Streamlit app (main file)
+├── tmdb_5000_movies.csv    # TMDB movie dataset
+├── requirements.txt        # Python dependencies
+└── README.md
+```
+
+---
+
+## ⚙️ How It Works
+
+1. **Data Loading** — Reads `tmdb_5000_movies.csv` (4,800+ movies)
+2. **Feature Engineering** — Combines `overview`, `genres`, and `keywords` into a single `tags` column
+3. **Vectorization** — Applies `CountVectorizer` (top 5000 features, English stop-words removed)
+4. **Similarity** — Computes **Cosine Similarity** between all movie vectors
+5. **Caching** — Uses `@st.cache_data` so the model builds only once per session
+6. **Recommendation** — Returns top 8 most similar movies for any selected title
+
+---
+
+## 🚀 Run Locally
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/KaranamDeepak/Movie-Recommendation-System.git
+cd Movie-Recommendation-System
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Run the app
+streamlit run app.py
+```
+
+Open your browser at **http://localhost:8501** 🎉
+
+---
+
+## 📦 Requirements
+
+```
+streamlit
+pandas
+scikit-learn
+numpy
+```
+
+---
+
+## 📸 Screenshots
+
+> *(Add a screenshot of your running app here)*
+
+---
+
+## 🙋‍♂️ Author
+
+**Karanam Deepak**  
+[![GitHub](https://img.shields.io/badge/GitHub-KaranamDeepak-181717?style=flat&logo=github)](https://github.com/KaranamDeepak)
